@@ -1,9 +1,9 @@
 var GraphSvg = function () {
-    var gs = Object.create(null);
+    var _ = Object.create(null);
 
     var graph = {
         n: {},
-        e: []
+        e: [],
         minC: [],
         maxC: []
     };
@@ -30,7 +30,7 @@ var GraphSvg = function () {
                 svg += "<title>" + key + "</title>";
                 svg += "</circle>";
             }
-        }
+        };
 
         // lay down the nodes
         makeCircles (graph.k, "red");
@@ -41,16 +41,16 @@ var GraphSvg = function () {
         return svg;
     }
 
-    gs.addNode = function (name, container, mass) {
-    }
+    _.addNode = function (name, container, mass) {
+    };
 
-    gs.addEdge = function (left, right, container, length) {
-    }
+    _.addEdge = function (left, right, container, length) {
+    };
 
-    gs.addConstraint = function (left, right, length, push, pull) {
-    }
+    _.addConstraint = function (left, right, length, push, pull) {
+    };
 
-    gs.update = function () {
+    _.update = function () {
         var computeConstraint = function (c, km, mm, l, push, pull) {
             // compute the total masses, and the individual weight
             var mt = km + mm;
@@ -137,12 +137,12 @@ var GraphSvg = function () {
         // and circle back to here
         svg.unsuspendRedraw (handle);
         onClickAnimate ();
-    }
+    };
 
     // will want to redesign this to resemble the tree helper, with a graph helper that
     // creates the graph object and then embeds it in a div for you
-    gs.create = function () {
-    }
+    _.create = function () {
+    };
 
-    return gs;
+    return _;
 } ();
